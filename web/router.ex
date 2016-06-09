@@ -17,10 +17,12 @@ defmodule Mroutinez.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-  end
+    resources "/routines", RoutineController
+    resources "/registrations", RegistrationController, only: [:new, :create]
 
-  # Other scopes may use custom stacks.
-  # scope "/api", Mroutinez do
-  #   pipe_through :api
-  # end
+    # sessions
+    get "/login", SessionController, :new 
+    post "/login", SessionController, :create
+    delete "logout", SessionController, :delete
+  end
 end

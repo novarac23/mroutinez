@@ -1,0 +1,8 @@
+<h1> Create your wish </h1>
+
+<%= render "form.html", changeset: @changeset,
+                        action: routine_path(@conn, :create) %>
+
+<% link "Back", to: routine_path(@conn, :index) %>
+
+

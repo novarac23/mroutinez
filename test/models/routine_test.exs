@@ -3,7 +3,7 @@ defmodule Mroutinez.RoutineTest do
 
   alias Mroutinez.Routine
 
-  @valid_attrs %{content: "Do 5 squats and drink 20oz of water", stars: 42, title: "Space Shooter Routine", type: "morning"}
+  @valid_attrs %{content: "Do 5 squats and drink 20oz of water", stars: 42, title: "Space Shooter Routine", type: "morning", user_id: 2}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do
@@ -25,6 +25,6 @@ defmodule Mroutinez.RoutineTest do
   test "title must be at least 5 characters long" do
     attrs = %{@valid_attrs | title: "MM"}
 
-    assert {:title, {"should be at least %{count} character(s)", [count: 5]}} in errors_on(%Routine{}, attrs)
+    assert {:title, {"should be at least %{count} character(s)", [count: 3]}} in errors_on(%Routine{}, attrs)
   end
 end

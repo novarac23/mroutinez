@@ -7,10 +7,11 @@ defmodule Mroutinez.Routine do
     field :type, :string
     field :stars, :integer
 
+    belongs_to :user, Mroutinez.User
     timestamps
   end
 
-  @required_fields ~w(title content type)
+  @required_fields ~w(title content type user_id)
   @optional_fields ~w(stars)
 
   @doc """
@@ -22,6 +23,6 @@ defmodule Mroutinez.Routine do
   def changeset(model, params \\ :empty) do
     model
     |> cast(params, @required_fields, @optional_fields)
-    |> validate_length(:title, min: 5)
+    |> validate_length(:title, min: 3)
   end
 end

@@ -1,0 +1,8 @@
+<h1>Single routine page</h1>
+
+<p> USER WHO CREATE THIS IS <%= @routine.user.email %>
+<p><%= @routine.title %></p>
+<p><%= @routine.content %></p>
+<p><%= @routine.type %></p>
+
+<%= link "Back to all routines", to: "/routines" %>

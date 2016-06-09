@@ -52,6 +52,7 @@ defmodule Mroutinez.Web do
       import Mroutinez.Router.Helpers
       import Mroutinez.ErrorHelpers
       import Mroutinez.Gettext
+      import Mroutinez.Session, only: [current_user: 1, logged_in?: 1]
     end
   end
 

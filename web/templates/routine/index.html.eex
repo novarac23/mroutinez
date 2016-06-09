@@ -1,0 +1,13 @@
+<h1>Get better by reading other peoples routines!</h1>
+
+<div>
+<%= for routine <- @routines  do %>
+  <hr>
+  <p><%= routine.title %></p>
+  <p><%= routine.content %></p>
+  <p><%= routine.type %></p>
+  <p> USER: <%= routine.user.email %> </p>
+  <p> <%= link "See a full preview", to: routine_path(@conn, :show, routine) %> </p>
+  <hr>
+<% end %>
+</div>
